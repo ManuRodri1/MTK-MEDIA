@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-04",
+  "framework": "Next.js 16 App Router",
+  "fonts": ["Bebas Neue", "Antonio"],
+  "palette": ["#0e1c4f", "#ffffff", "#000000", "#898989"],
+  "motion": "framer-motion installed; public redesign uses native CSS and selective client state",
+  "spacing": "4-point named scale in design.md",
+  "designSystem": "design.md",
+  "scope": "approved THE MTK CUT homepage refinement plus shared header/footer; backend, admin and inner-page bodies excluded"
+}

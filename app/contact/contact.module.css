@@ -1,0 +1,52 @@
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V5 */
+/* Hallmark · genre: editorial · macrostructure: letter-close · design-system: design.md · designed-as-app */
+.site {
+  min-height: 100dvh;
+  overflow-x: clip;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-family: var(--font-body);
+}
+
+.site *, .site *::before, .site *::after { box-sizing: border-box; }
+.site a { color: inherit; text-decoration: none; }
+.site :is(a, button, input, textarea):focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; }
+
+.page { padding-inline: var(--page-gutter); }
+.opening { display: grid; gap: var(--space-2xl); min-height: 72svh; align-content: space-between; padding-block: var(--space-4xl) var(--space-3xl); border-block-end: var(--rule-hair) solid var(--color-rule-strong); }
+.opening h1 { max-width: 12ch; min-width: 0; font-family: var(--font-display); font-size: var(--text-display-long); font-style: normal; font-weight: 400; line-height: var(--leading-heading); overflow-wrap: anywhere; }
+.openingDetail { display: grid; gap: var(--space-lg); }
+.openingDetail p { max-width: 40rem; font-size: var(--text-lede); line-height: 1.45; }
+.openingDetail span { font-size: var(--text-sm); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+
+.contactBody { display: grid; gap: var(--space-3xl); padding-block: var(--space-4xl) var(--space-5xl); }
+.form { display: grid; gap: var(--space-xl); }
+.field { display: grid; gap: var(--space-xs); }
+.field label { font-size: var(--text-sm); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+.field input, .field textarea { width: 100%; min-height: 3rem; padding: var(--space-xs) 0; border: 0; border-block-end: var(--rule-hair) solid var(--color-rule-strong); border-radius: 0; background: transparent; color: inherit; font: inherit; resize: vertical; transition: border-color var(--dur-short) var(--ease-out); }
+.field textarea { min-height: 9rem; }
+.field input:hover, .field textarea:hover { border-block-end-color: currentColor; }
+.field input:focus, .field textarea:focus { border-block-end-color: currentColor; }
+.formAction { display: grid; gap: var(--space-md); justify-items: start; }
+.formAction button { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 2.75rem; padding-inline: var(--space-sm); border: var(--rule-hair) solid currentColor; border-radius: var(--radius-control); background: var(--color-paper); color: var(--color-accent); font: inherit; white-space: nowrap; cursor: pointer; transition: transform var(--dur-micro) var(--ease-out), opacity var(--dur-short) var(--ease-out); }
+.formAction button:hover { opacity: .84; }
+.formAction button:active { transform: translateY(1px); }
+.formAction button:disabled { cursor: not-allowed; opacity: .55; }
+.formAction button[data-state="error"] { border-style: double; }
+.status, .error { min-height: 1.5em; max-width: 36rem; }
+.error { color: var(--color-paper); font-weight: 600; }
+.social { display: grid; align-content: end; gap: var(--space-xs); padding-block-start: var(--space-xl); border-block-start: var(--rule-hair) solid var(--color-rule-strong); }
+.social p { margin-block-end: var(--space-sm); color: var(--color-paper-2); }
+.social a { display: inline-flex; align-items: center; width: fit-content; min-height: 2.75rem; border-block-end: var(--rule-hair) solid currentColor; white-space: nowrap; }
+
+.site :global(footer) { border-block-start-color: var(--color-rule-strong); }
+
+@media (min-width: 48rem) {
+  .opening { grid-template-columns: minmax(0, 5fr) minmax(0, 3fr); align-items: end; }
+  .contactBody { grid-template-columns: minmax(0, 5fr) minmax(14rem, 3fr); }
+  .social { border-block-start: 0; border-inline-start: var(--rule-hair) solid var(--color-rule-strong); padding: 0 0 0 var(--space-xl); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site *, .site *::before, .site *::after { animation-duration: 150ms !important; animation-iteration-count: 1 !important; transition-duration: 150ms !important; }
+}

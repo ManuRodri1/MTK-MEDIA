@@ -1,0 +1,45 @@
+[
+  {
+    "date": "2026-09-07",
+    "scope": "work-page-selected-work-polish",
+    "macrostructure": "Portfolio Grid + Marquee teaser",
+    "theme": "custom — locked THE MTK CUT",
+    "theme_axes": "light paper / display-condensed-bold / cool navy",
+    "vibe": "editorial portrait-video index with restrained motion",
+    "enrichment": "published 9:16 video, observer-driven playback and mask reveal",
+    "brief": "Focused /work and homepage Selected Work visual refinement",
+    "qa": "Typecheck, lint, production build, responsive browser pass at 390–1920px, Hallmark 58-gate review"
+  },
+  {
+    "date": "2026-09-07",
+    "scope": "simplified-work-product",
+    "macrostructure": "Marquee Hero + Portfolio Grid",
+    "theme": "custom — locked THE MTK CUT",
+    "theme_axes": "light paper / display-condensed-bold / cool navy",
+    "vibe": "simple product premium portrait-video presentation",
+    "enrichment": "published 9:16 work videos with viewport-aware native playback",
+    "brief": "Simplify admin to add video, Instagram URL and publish while preserving existing infrastructure",
+    "qa": "Typecheck, lint and production build; static responsive and Hallmark 58-gate review"
+  },
+  {
+    "date": "2026-09-02",
+    "scope": "app",
+    "macrostructure": "Marquee Showreel + Photographic Reel",
+    "theme": "custom",
+    "theme_axes": "light paper / display-condensed-bold / cool navy",
+    "vibe": "cinematic editorial youthful production-led",
+    "enrichment": "full-bleed supplied showreel",
+    "brief": "MTK Media public multi-page redesign — The MTK Cut"
+  },
+  {
+    "date": "2026-09-04",
+    "scope": "homepage-refinement",
+    "macrostructure": "Portrait media stage / inverted manifesto / native work reel / discipline accordion / production split / editorial colophon",
+    "theme": "custom — existing THE MTK CUT preserved by explicit request",
+    "theme_axes": "light paper / display-condensed-bold / cool navy",
+    "vibe": "cinematic editorial production-led",
+    "enrichment": "two supplied 9:16 films; restrained poster atmosphere, controlled sharp stage",
+    "brief": "Focused art direction, responsive behavior and frontend scalability; no backend changes",
+    "qa": "See .hallmark/homepage-qa.md"
+  }
+]

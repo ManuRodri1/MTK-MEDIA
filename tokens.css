@@ -1,0 +1,81 @@
+/* Hallmark · genre: editorial showreel · tone: cinematic, youthful, intentionally imperfect · anchor: MTK navy · fingerprint: marquee-showreel + photographic reel */
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V5 · design-system: design.md · designed-as-app */
+:root {
+  --brand-white: oklch(100% 0 0);
+  --brand-black: oklch(0% 0 0);
+  --brand-gray: oklch(63.01% 0.008 267.3);
+  --brand-navy: oklch(25.17% 0.0956 267.3);
+
+  --color-paper: oklch(98.4% 0.004 267.3);
+  --color-paper-2: oklch(95.5% 0.008 267.3);
+  --color-paper-3: oklch(91% 0.012 267.3);
+  --color-ink: oklch(10.8% 0.016 267.3);
+  --color-ink-2: oklch(23% 0.025 267.3);
+  --color-rule: oklch(82% 0.01 267.3);
+  --color-rule-strong: oklch(63.01% 0.008 267.3);
+  --color-muted: oklch(48% 0.012 267.3);
+  --color-accent: var(--brand-navy);
+  --color-accent-ink: var(--color-paper);
+  --color-focus: oklch(58% 0.18 260);
+  --color-error: oklch(58% 0.19 27);
+  --color-success: oklch(58% 0.12 153);
+  --color-scrim: oklch(9% 0.02 267.3 / 0.68);
+  --color-scrim-soft: oklch(9% 0.02 267.3 / 0.34);
+  --color-hero-scrim: oklch(9% 0.02 267.3 / 0.52);
+
+  --font-display: "Bebas Neue Cyrillic", "Bebas Neue", sans-serif;
+  --font-body: "Antonio", sans-serif;
+
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+  --space-5xl: 12rem;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --text-lede: clamp(1.25rem, 1.08rem + 0.85vw, 1.75rem);
+  --text-h3: clamp(1.75rem, 1.35rem + 1.6vw, 3rem);
+  --text-h2: clamp(2.75rem, 1.85rem + 4vw, 6rem);
+  --text-display: clamp(4rem, 2rem + 8vw, 10rem);
+  --text-display-long: clamp(2.75rem, 1.8rem + 5vw, 7rem);
+  --text-showreel: clamp(3.4rem, 8.2vw, 7.5rem);
+  --text-hero-mobile: clamp(3.2rem, 17vw, 6rem);
+  --text-hero-desktop: clamp(4.5rem, 8vw, 9rem);
+  --text-manifesto: clamp(3.25rem, 7.8vw, 8.5rem);
+  --text-discipline: clamp(2.25rem, 6vw, 6rem);
+  --text-studio-es: clamp(2.5rem, 4.7vw, 6rem);
+  --leading-display: 1.02;
+  --leading-heading: 0.96;
+  --leading-body: 1.55;
+  --tracking-display: 0.01em;
+  --tracking-label: 0.09em;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-base: 320ms;
+  --dur-long: 480ms;
+
+  --rule-hair: 1px;
+  --rule-strong: 2px;
+  --radius-media: 0;
+  --radius-control: 0.125rem;
+  --radius-pill: 999px;
+  --page-gutter: clamp(var(--space-sm), 4vw, var(--space-2xl));
+  --header-height: 4.75rem;
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 400;
+}
