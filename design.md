@@ -210,7 +210,7 @@ Use the named 4-point scale. Raw spacing values are prohibited in future public-
 ## Video
 
 - Home showreel · use the supplied MTK Cloudinary film as a full-bleed background, never inside a card. Begin muted; expose explicit play/pause and sound controls. The opening frame uses a derived Cloudinary poster and a stable `100svh`-class container.
-- Home showreel source · `https://res.cloudinary.com/vloh9uw1/video/upload/v1788368704/AS%C3%8D_SE_TRBAJA_EN_MTK_y_ustedes_ACOTAO_El_real_dream_team-_jdfilm.s_berroa_photography01_jh.mp4`.
+- Home showreel source · `https://res.cloudinary.com/vloh9uw1/video/upload/v1788976814/AHORA_SI_ES_VERDAD_QUE_SubioLaLibra_en_Puerto_Plata_Se_juntaron_sojuleg_rd_mtkmediainc_pa_d.mp4`.
 - Work index · poster-first. On pointer-capable devices, an optional muted preview may begin after intent is clear; it stops when out of view. Mobile remains poster-first.
 - Project hero · autoplay is permitted only for a designated ready hero video, muted, inline, looped and without audio expectation. Respect reduced motion and data-saving preferences by showing the poster instead.
 - Editorial video · user-initiated playback with native or accessible custom controls; never autoplay multiple videos.

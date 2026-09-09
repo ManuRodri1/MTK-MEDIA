@@ -9,7 +9,7 @@ export const siteConfig = {
 } as const
 
 export const homeFilms = {
-  hero: "https://res.cloudinary.com/vloh9uw1/video/upload/v1788368704/AS%C3%8D_SE_TRBAJA_EN_MTK_y_ustedes_ACOTAO_El_real_dream_team-_jdfilm.s_berroa_photography01_jh.mp4",
+  hero: "https://res.cloudinary.com/vloh9uw1/video/upload/v1788976814/AHORA_SI_ES_VERDAD_QUE_SubioLaLibra_en_Puerto_Plata_Se_juntaron_sojuleg_rd_mtkmediainc_pa_d.mp4",
   production: "https://res.cloudinary.com/vloh9uw1/video/upload/v1788491255/Selling_las_terrenas_EPISODE_2_is_OUT_now_With_best_cast_ever-_elena_realtordr_sellingdrwithna.mp4",
 } as const
 
