@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Image from "next/image"
 import Link from "next/link"
 import { PublicHeader } from "@/components/public/PublicHeader"
 import { PublicFooter } from "@/components/public/PublicFooter"
@@ -30,9 +29,9 @@ export default async function PortfolioPage({ searchParams }: { searchParams: Pr
   const locale = resolveLocale((await searchParams).lang)
   const es = locale === "es"
   const categories = [
-    { href: "/portfolio/hospitality-resorts", name: es ? "Hoteles" : "Hotels", poster: "/hospitality-resorts/posters/resort_1.jpg" },
-    { href: "/portfolio/real-estate", name: es ? "Bienes raíces" : "Real estate", poster: "/real-estate/posters/video1.jpg" },
-    { href: "/portfolio/doctors", name: es ? "Doctores" : "Doctors", poster: "/doctors/posters/doctor_1.jpg" },
+    { href: "/portfolio/hospitality-resorts", name: es ? "Hoteles" : "Hotels", media: [1, 6].map(n => ({ src: `/hospitality-resorts/videos/resort_${n}.mp4`, poster: `/hospitality-resorts/posters/resort_${n}.jpg` })) },
+    { href: "/portfolio/real-estate", name: es ? "Bienes raíces" : "Real estate", media: [1, 6].map(n => ({ src: `/real-estate/videos/video${n}.mp4`, poster: `/real-estate/posters/video${n}.jpg` })) },
+    { href: "/portfolio/doctors", name: es ? "Doctores" : "Doctors", media: [1, 6].map(n => ({ src: `/doctors/videos/doctor_${n}.mp4`, poster: `/doctors/posters/doctor_${n}.jpg` })) },
   ]
   return <div className={homeStyles.site} lang={locale}>
     <PublicHeader />
@@ -47,10 +46,14 @@ export default async function PortfolioPage({ searchParams }: { searchParams: Pr
       <section className={styles.categories} aria-labelledby="portfolio-categories">
         <h2 id="portfolio-categories">{es ? "Explora el trabajo" : "Explore the work"}</h2>
         <div className={styles.grid}>
-          {categories.map((category) => <Link className={styles.category} href={localizedHref(category.href, locale)} key={category.href}>
-            <div className={styles.image}><Image src={category.poster} alt="" fill sizes="(min-width: 768px) 33vw, 100vw" /></div>
+          {categories.map((category) => <article className={styles.category} key={category.href}>
+            <div className={styles.previewPair}>
+              {category.media.map((media, index) => <ViewportVideo key={media.src} src={media.src} poster={media.poster} label={`${category.name} — ${es ? "muestra" : "preview"} ${index + 1}`} locale={locale} className={styles.preview} />)}
+            </div>
             <div className={styles.label}><h3>{category.name}</h3><span aria-hidden="true">↗</span></div>
-          </Link>)}
+            <p className={styles.viewLabel}>{es ? "Ver portafolio completo" : "View full portfolio"}</p>
+            <Link className={styles.categoryLink} href={localizedHref(category.href, locale)} aria-label={`${es ? "Ver portafolio completo" : "View full portfolio"}: ${category.name}`} />
+          </article>)}
         </div>
       </section>
     </main>
