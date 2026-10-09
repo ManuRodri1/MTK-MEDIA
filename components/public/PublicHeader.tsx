@@ -42,6 +42,7 @@ export function PublicHeader({ overlay = false }: { overlay?: boolean }) {
     router.replace(`${pathname}${next.size ? `?${next.toString()}` : ""}`, { scroll: false })
   }
   const links = [
+    { href: "/portfolio", label: locale === "es" ? "Portafolio" : "Portfolio" },
     { href: "/work", label: locale === "es" ? "Trabajo" : "Work" },
     { href: "/services", label: locale === "es" ? "Servicios" : "Services" },
     { href: "/contact", label: locale === "es" ? "Contacto" : "Contact" },

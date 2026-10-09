@@ -1,0 +1,15 @@
+.intro { padding: var(--space-2xl) var(--page-gutter) var(--space-xl); display: flex; justify-content: space-between; align-items: end; gap: var(--space-xl); }
+.intro h1 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h2); line-height: 1; }
+.intro p { max-width: 38rem; line-height: var(--leading-body); }
+.film { width: 100%; aspect-ratio: 16 / 9; max-height: 80svh; }
+.categories { padding: var(--space-3xl) var(--page-gutter) var(--space-4xl); }
+.categories h2 { font-family: var(--font-display); font-weight: 400; font-size: var(--text-h3); margin-bottom: var(--space-xl); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg); }
+.category { display: block; min-width: 0; }
+.image { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--color-paper-3); }
+.image img { object-fit: cover; transition: transform 250ms ease; }
+.label { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule-strong); }
+.label h3 { margin: 0; font-family: var(--font-display); font-size: var(--text-h3); font-weight: 400; }
+@media (hover: hover) { .category:hover img { transform: scale(1.03); } }
+@media (max-width: 47.99rem) { .intro { display: grid; } .grid { grid-template-columns: 1fr; gap: var(--space-2xl); } }
+@media (prefers-reduced-motion: reduce) { .image img { transition: none; } }

@@ -3,6 +3,10 @@ const nextConfig = {
   async rewrites() {
     return [
       {
+        source: "/portfolio/doctors",
+        destination: "/doctors/index.html",
+      },
+      {
         source: "/portfolio/real-estate",
         destination: "/real-estate/index.html",
       },
