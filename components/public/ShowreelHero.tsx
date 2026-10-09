@@ -12,7 +12,7 @@ export function ShowreelHero({ locale }: { locale: PublicLocale }) {
         <Image src={poster} alt="" fill sizes="100vw" loading="eager" fetchPriority="high" />
       </div>
       <ViewportVideo src={homeFilms.hero} poster={poster} label={locale === "es" ? "Showreel MTK" : "MTK showreel"} locale={locale} className={styles.heroStage} eager sound />
-      <div className={styles.heroMeta}><span>MTK / 001</span><span>Santo Domingo · DR</span></div>
+      <div className={styles.heroMeta}><span>MTK / 001</span><span>{locale === "es" ? "República Dominicana" : "Dominican Republic"}</span></div>
       <h1 className={styles.heroTitle}>
         <span>Marketing.</span><span>Technology.</span><span>Kreativity.</span><span className={styles.heroEvolved}>Evolved.</span>
       </h1>

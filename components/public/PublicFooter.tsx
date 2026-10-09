@@ -34,7 +34,7 @@ export function PublicFooter() {
             <Link href={localizedHref("/contact", locale)}>{es ? "Contacto" : "Contact"}</Link>
           </nav>
           <div><h2>Social</h2>{siteConfig.social.map((social) => <a key={social.name} href={social.href} target="_blank" rel="noreferrer">{social.name} <span aria-hidden="true">↗</span></a>)}</div>
-          <div className={styles.footerLocation}><h2>{es ? "Estudio" : "Studio"}</h2><p>Santo Domingo<br />{es ? "República Dominicana" : "Dominican Republic"}</p>
+          <div className={styles.footerLocation}><h2>{es ? "Estudio" : "Studio"}</h2><p>{pathname !== "/" ? <>Santo Domingo<br /></> : null}{es ? "República Dominicana" : "Dominican Republic"}</p>
             <div className={styles.localeSwitch} aria-label={es ? "Idioma" : "Language"}>
               <button type="button" aria-pressed={!es} onClick={() => changeLocale("en")}>EN</button><span aria-hidden="true">/</span><button type="button" aria-pressed={es} onClick={() => changeLocale("es")}>ES</button>
             </div>
