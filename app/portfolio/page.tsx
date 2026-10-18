@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
+import photos from "@/lib/portfolio/photography.json"
 import { PublicHeader } from "@/components/public/PublicHeader"
 import { PublicFooter } from "@/components/public/PublicFooter"
 import { ViewportVideo } from "@/components/public/ViewportVideo"
@@ -9,7 +11,7 @@ import styles from "./portfolio.module.css"
 
 export const metadata: Metadata = {
   title: "Portfolio",
-  description: "Films and content for hotels, real estate and doctors, by MTK Media.",
+  description: "Films, event coverage and photography for hotels, real estate and brands, by MTK Media.",
   alternates: {
     canonical: "https://www.mtkmediagroup.com/portfolio",
     languages: {
@@ -19,7 +21,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Portfolio | MTK Media",
-    description: "Films and content for hotels, real estate and doctors, by MTK Media.",
+    description: "Films, event coverage and photography for hotels, real estate and brands, by MTK Media.",
     url: "https://www.mtkmediagroup.com/portfolio",
     type: "website",
   },
@@ -32,6 +34,7 @@ export default async function PortfolioPage({ searchParams }: { searchParams: Pr
     { href: "/portfolio/hospitality-resorts", name: es ? "Hoteles" : "Hotels", media: [1, 6].map(n => ({ src: `/hospitality-resorts/videos/resort_${n}.mp4`, poster: `/hospitality-resorts/posters/resort_${n}.jpg` })) },
     { href: "/portfolio/real-estate", name: es ? "Bienes raíces" : "Real estate", media: [1, 6].map(n => ({ src: `/real-estate/videos/video${n}.mp4`, poster: `/real-estate/posters/video${n}.jpg` })) },
     { href: "/portfolio/doctors", name: es ? "Doctores" : "Doctors", media: [1, 6].map(n => ({ src: `/doctors/videos/doctor_${n}.mp4`, poster: `/doctors/posters/doctor_${n}.jpg` })) },
+    { href: "/portfolio/events", name: es ? "Cobertura de eventos" : "Events Coverage", media: ["lifestyle-event-2026", "lifestyle-beach-day"].map(name => ({ src: `/events/media/${name}-preview.mp4`, poster: `/events/media/${name}-poster.jpg` })) },
   ]
   return <div className={homeStyles.site} lang={locale}>
     <PublicHeader />
@@ -54,6 +57,14 @@ export default async function PortfolioPage({ searchParams }: { searchParams: Pr
             <p className={styles.viewLabel}>{es ? "Ver portafolio completo" : "View full portfolio"}</p>
             <Link className={styles.categoryLink} href={localizedHref(category.href, locale)} aria-label={`${es ? "Ver portafolio completo" : "View full portfolio"}: ${category.name}`} />
           </article>)}
+          <article className={styles.category}>
+            <div className={styles.photoPreview}>
+              {photos.slice(0,4).map(photo => <Image key={photo.id} src={photo.thumbnail || photo.src} alt={es ? photo.alt_es : photo.alt_en} width={photo.width} height={photo.height} sizes="(max-width: 768px) 50vw, 17vw" />)}
+            </div>
+            <div className={styles.label}><h3>{es ? "Fotografía" : "Photography"}</h3><span aria-hidden="true">↗</span></div>
+            <p className={styles.viewLabel}>{es ? "Ver galería completa" : "View full gallery"}</p>
+            <Link className={styles.categoryLink} href={localizedHref("/portfolio/photography", locale)} aria-label={es ? "Ver portafolio de fotografía" : "View photography portfolio"} />
+          </article>
         </div>
       </section>
     </main>
