@@ -1,3 +1,5 @@
+import { parseGuestName } from "./invitation-guest"
+
 const UPSTREAM = "https://mtk-subio-la-libra.gustavoreynosomtk.chatgpt.site/api/rsvp"
 const MAX_BYTES = 4096
 
@@ -59,6 +61,8 @@ export async function handleRsvp(request: Request, send: typeof fetch = fetch) {
   const name = typeof data.name === "string" ? data.name.trim().replace(/\s+/g, " ") : ""
   const email = typeof data.email === "string" ? data.email.trim().toLowerCase() : ""
   const language = data.language
+  const guest = parseGuestName(data.guest_name)
+  if (!guest.valid) return reply(400, { ok: false, error: "invalid_guest_name" })
   if (data.website || name.length < 2 || name.length > 100 || /[\u0000-\u001f\u007f]/.test(name) || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || (language !== "es" && language !== "en")) {
     return reply(400, { ok: false, error: "invalid_fields" })
   }
@@ -66,7 +70,7 @@ export async function handleRsvp(request: Request, send: typeof fetch = fetch) {
     const response = await send(UPSTREAM, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json", Origin: origin },
-      body: JSON.stringify({ name, email, language }),
+      body: JSON.stringify({ name, email, language, ...(guest.name === undefined ? {} : { guest_name: guest.name }) }),
       cache: "no-store",
       credentials: "omit",
       redirect: "error",
